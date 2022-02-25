@@ -2182,7 +2182,7 @@ try {
     for (const dep of dependencies) {
         const [from, to] = dep;
 
-        const fromPath = path__WEBPACK_IMPORTED_MODULE_1__.join(workRoot, from, "/.");
+        const fromPath = path__WEBPACK_IMPORTED_MODULE_1__.join(workRoot, from, "/") + ".";
         const toPath = path__WEBPACK_IMPORTED_MODULE_1__.join(targetFolderPath, to, "/");
 
         _actions_core__WEBPACK_IMPORTED_MODULE_2__.info(`Copying "${fromPath}" to "${toPath}"`);

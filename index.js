@@ -19,7 +19,7 @@ try {
     for (const dep of dependencies) {
         const [from, to] = dep;
 
-        const fromPath = path.join(workRoot, from, "/.");
+        const fromPath = path.join(workRoot, from, "/") + ".";
         const toPath = path.join(targetFolderPath, to, "/");
 
         core.info(`Copying "${fromPath}" to "${toPath}"`);
