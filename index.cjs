@@ -4,11 +4,11 @@ const core = require("@actions/core");
 const io = require("@actions/io");
 
 const fsPromises = fs.promises;
-const projectRoot = path.join(__dirname, "../../");
+const workRoot = path.join(process.env.GITHUB_WORKSPACE);
 
 (async () => {
-    const sourceJsonPath = path.join(projectRoot, core.getInput("source-json"));
-    const targetFolderPath = path.join(projectRoot, core.getInput("target-folder"));
+    const sourceJsonPath = path.join(workRoot, core.getInput("source-json"));
+    const targetFolderPath = path.join(workRoot, core.getInput("target-folder"));
 
     try {
         const json = await fsPromises.readFile(sourceJsonPath)
