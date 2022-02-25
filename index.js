@@ -19,7 +19,13 @@ try {
 
     for (const dep of dependencies) {
         const [from, to] = dep;
-        await io.cp(path.resolve(workRoot, from), path.resolve(targetFolderPath, to), options);
+
+        const fromPath = path.resolve(workRoot, from);
+        const toPath = path.resolve(targetFolderPath, to);
+
+        core.info(`Copying "${fromPath}" to "${toPath}"`);
+
+        await io.cp(fromPath, toPath, options);
     }
 } catch (err) {
     core.setFailed(`Action failed with error ${err}`);

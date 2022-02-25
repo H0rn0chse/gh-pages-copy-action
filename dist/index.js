@@ -2182,7 +2182,13 @@ try {
 
     for (const dep of dependencies) {
         const [from, to] = dep;
-        await _actions_io__WEBPACK_IMPORTED_MODULE_3__.cp(path__WEBPACK_IMPORTED_MODULE_1__.resolve(workRoot, from), path__WEBPACK_IMPORTED_MODULE_1__.resolve(targetFolderPath, to), options);
+
+        const fromPath = path__WEBPACK_IMPORTED_MODULE_1__.resolve(workRoot, from);
+        const toPath = path__WEBPACK_IMPORTED_MODULE_1__.resolve(targetFolderPath, to);
+
+        _actions_core__WEBPACK_IMPORTED_MODULE_2__.info(`Copying "${fromPath}" to "${toPath}"`);
+
+        await _actions_io__WEBPACK_IMPORTED_MODULE_3__.cp(fromPath, toPath, options);
     }
 } catch (err) {
     _actions_core__WEBPACK_IMPORTED_MODULE_2__.setFailed(`Action failed with error ${err}`);
