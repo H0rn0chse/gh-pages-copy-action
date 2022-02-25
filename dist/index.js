@@ -2177,7 +2177,7 @@ try {
     const dependencies = JSON.parse(json);
 
     // Recursive must be true for directories
-    const options = { recursive: true, force: false, "strip-trailing-slashes": true }
+    const options = { recursive: true, force: false, "stripTrailingSlashes": true }
 
     for (const dep of dependencies) {
         const [from, to] = dep;
