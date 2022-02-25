@@ -2237,8 +2237,7 @@ const workRoot = path.join(process.env.GITHUB_WORKSPACE);
 
         for (const dep of dependencies) {
             const [from, to] = dep;
-            const path = path.join(targetFolderPath, to);
-            await io.cp(from, targetFolderPath, options);
+            await io.cp(path.join(workRoot, from), path.join(targetFolderPath, to), options);
         }
     } catch (err) {
         core.setFailed(`Action failed with error ${err}`);
