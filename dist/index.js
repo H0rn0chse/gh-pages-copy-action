@@ -2185,9 +2185,6 @@ try {
         const fromPath = path__WEBPACK_IMPORTED_MODULE_1__.join(workRoot, from);
         const toPath = path__WEBPACK_IMPORTED_MODULE_1__.join(targetFolderPath, to);
 
-        _actions_core__WEBPACK_IMPORTED_MODULE_2__.info(`Root input "${_actions_core__WEBPACK_IMPORTED_MODULE_2__.getInput("root")}"`);
-        _actions_core__WEBPACK_IMPORTED_MODULE_2__.info(`Root "${workRoot}"`);
-        _actions_core__WEBPACK_IMPORTED_MODULE_2__.info(`TargetFolder "${targetFolderPath}"`);
         _actions_core__WEBPACK_IMPORTED_MODULE_2__.info(`Copying "${fromPath}" to "${toPath}"`);
 
         await _actions_io__WEBPACK_IMPORTED_MODULE_3__.cp(fromPath, toPath, options);

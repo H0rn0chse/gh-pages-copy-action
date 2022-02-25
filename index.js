@@ -22,9 +22,6 @@ try {
         const fromPath = path.join(workRoot, from);
         const toPath = path.join(targetFolderPath, to);
 
-        core.info(`Root input "${core.getInput("root")}"`);
-        core.info(`Root "${workRoot}"`);
-        core.info(`TargetFolder "${targetFolderPath}"`);
         core.info(`Copying "${fromPath}" to "${toPath}"`);
 
         await io.cp(fromPath, toPath, options);
