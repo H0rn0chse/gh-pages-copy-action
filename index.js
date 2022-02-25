@@ -5,7 +5,7 @@ import * as io from "@actions/io";
 
 const fsPromises = fs.promises;
 
-const workRoot = path.join(core.getInput("root"));
+const workRoot = path.join("/home/runner/work");
 const sourceJsonPath = path.join(workRoot, core.getInput("source-json"));
 const targetFolderPath = path.join(workRoot, core.getInput("target-folder"));
 
