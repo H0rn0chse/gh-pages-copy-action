@@ -2177,13 +2177,13 @@ try {
     const dependencies = JSON.parse(json);
 
     // Recursive must be true for directories
-    const options = { recursive: true, force: false, "stripTrailingSlashes": true }
+    const options = { recursive: true, force: false }
 
     for (const dep of dependencies) {
         const [from, to] = dep;
 
-        const fromPath = path__WEBPACK_IMPORTED_MODULE_1__.join(workRoot, from);
-        const toPath = path__WEBPACK_IMPORTED_MODULE_1__.join(targetFolderPath, to);
+        const fromPath = path__WEBPACK_IMPORTED_MODULE_1__.join(workRoot, from).replace(/\/$/, "");;
+        const toPath = path__WEBPACK_IMPORTED_MODULE_1__.join(targetFolderPath, to).replace(/\/$/, "");;
 
         _actions_core__WEBPACK_IMPORTED_MODULE_2__.info(`Copying "${fromPath}" to "${toPath}"`);
 

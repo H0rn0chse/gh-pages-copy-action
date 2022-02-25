@@ -14,13 +14,13 @@ try {
     const dependencies = JSON.parse(json);
 
     // Recursive must be true for directories
-    const options = { recursive: true, force: false, "stripTrailingSlashes": true }
+    const options = { recursive: true, force: false }
 
     for (const dep of dependencies) {
         const [from, to] = dep;
 
-        const fromPath = path.join(workRoot, from);
-        const toPath = path.join(targetFolderPath, to);
+        const fromPath = path.join(workRoot, from).replace(/\/$/, "");;
+        const toPath = path.join(targetFolderPath, to).replace(/\/$/, "");;
 
         core.info(`Copying "${fromPath}" to "${toPath}"`);
 
