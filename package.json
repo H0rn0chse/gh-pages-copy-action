@@ -2,7 +2,6 @@
   "name": "gh-pages-copy-action",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "ncc build index.js --license licenses.txt"

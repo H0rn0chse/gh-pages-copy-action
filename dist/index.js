@@ -1,9 +1,11 @@
 import { createRequire as __WEBPACK_EXTERNAL_createRequire } from "module";
-/******/ var __webpack_modules__ = ({
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
-/***/ 298:
+/***/ 351:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -27,7 +29,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issue = exports.issueCommand = void 0;
 const os = __importStar(__nccwpck_require__(37));
-const utils_1 = __nccwpck_require__(104);
+const utils_1 = __nccwpck_require__(278);
 /**
  * Commands
  *
@@ -99,9 +101,10 @@ function escapeProperty(s) {
 
 /***/ }),
 
-/***/ 763:
+/***/ 186:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -133,12 +136,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getIDToken = exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.notice = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = void 0;
-const command_1 = __nccwpck_require__(298);
-const file_command_1 = __nccwpck_require__(898);
-const utils_1 = __nccwpck_require__(104);
+const command_1 = __nccwpck_require__(351);
+const file_command_1 = __nccwpck_require__(717);
+const utils_1 = __nccwpck_require__(278);
 const os = __importStar(__nccwpck_require__(37));
 const path = __importStar(__nccwpck_require__(17));
-const oidc_utils_1 = __nccwpck_require__(718);
+const oidc_utils_1 = __nccwpck_require__(41);
 /**
  * The code to exit an action
  */
@@ -417,9 +420,10 @@ exports.getIDToken = getIDToken;
 
 /***/ }),
 
-/***/ 898:
+/***/ 717:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 // For internal use, subject to change.
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -447,7 +451,7 @@ exports.issueCommand = void 0;
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const fs = __importStar(__nccwpck_require__(147));
 const os = __importStar(__nccwpck_require__(37));
-const utils_1 = __nccwpck_require__(104);
+const utils_1 = __nccwpck_require__(278);
 function issueCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -465,9 +469,10 @@ exports.issueCommand = issueCommand;
 
 /***/ }),
 
-/***/ 718:
+/***/ 41:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -480,9 +485,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.OidcClient = void 0;
-const http_client_1 = __nccwpck_require__(873);
-const auth_1 = __nccwpck_require__(293);
-const core_1 = __nccwpck_require__(763);
+const http_client_1 = __nccwpck_require__(925);
+const auth_1 = __nccwpck_require__(702);
+const core_1 = __nccwpck_require__(186);
 class OidcClient {
     static createHttpClient(allowRetry = true, maxRetry = 10) {
         const requestOptions = {
@@ -548,9 +553,10 @@ exports.OidcClient = OidcClient;
 
 /***/ }),
 
-/***/ 104:
+/***/ 278:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -594,9 +600,10 @@ exports.toCommandProperties = toCommandProperties;
 
 /***/ }),
 
-/***/ 293:
+/***/ 702:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 class BasicCredentialHandler {
@@ -659,14 +666,15 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 
 /***/ }),
 
-/***/ 873:
+/***/ 925:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const http = __nccwpck_require__(685);
 const https = __nccwpck_require__(687);
-const pm = __nccwpck_require__(331);
+const pm = __nccwpck_require__(443);
 let tunnel;
 var HttpCodes;
 (function (HttpCodes) {
@@ -1085,7 +1093,7 @@ class HttpClient {
         if (useProxy) {
             // If using proxy, need tunnel
             if (!tunnel) {
-                tunnel = __nccwpck_require__(749);
+                tunnel = __nccwpck_require__(294);
             }
             const agentOptions = {
                 maxSockets: maxSockets,
@@ -1203,9 +1211,10 @@ exports.HttpClient = HttpClient;
 
 /***/ }),
 
-/***/ 331:
+/***/ 443:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 function getProxyUrl(reqUrl) {
@@ -1267,9 +1276,10 @@ exports.checkBypass = checkBypass;
 
 /***/ }),
 
-/***/ 567:
+/***/ 962:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1450,9 +1460,10 @@ exports.getCmdPath = getCmdPath;
 
 /***/ }),
 
-/***/ 914:
+/***/ 436:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1488,7 +1499,7 @@ const assert_1 = __nccwpck_require__(491);
 const childProcess = __importStar(__nccwpck_require__(81));
 const path = __importStar(__nccwpck_require__(17));
 const util_1 = __nccwpck_require__(837);
-const ioUtil = __importStar(__nccwpck_require__(567));
+const ioUtil = __importStar(__nccwpck_require__(962));
 const exec = util_1.promisify(childProcess.exec);
 const execFile = util_1.promisify(childProcess.execFile);
 /**
@@ -1797,17 +1808,18 @@ function copyFile(srcFile, destFile, force) {
 
 /***/ }),
 
-/***/ 749:
+/***/ 294:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(448);
+module.exports = __nccwpck_require__(219);
 
 
 /***/ }),
 
-/***/ 448:
+/***/ 219:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 var net = __nccwpck_require__(808);
@@ -2079,6 +2091,7 @@ exports.debug = debug; // for test
 /***/ 491:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("assert");
 
 /***/ }),
@@ -2086,6 +2099,7 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("assert");
 /***/ 81:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("child_process");
 
 /***/ }),
@@ -2093,6 +2107,7 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("child_proces
 /***/ 361:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("events");
 
 /***/ }),
@@ -2100,6 +2115,7 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("events");
 /***/ 147:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("fs");
 
 /***/ }),
@@ -2107,6 +2123,7 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("fs");
 /***/ 685:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("http");
 
 /***/ }),
@@ -2114,6 +2131,7 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("http");
 /***/ 687:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("https");
 
 /***/ }),
@@ -2121,6 +2139,7 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("https");
 /***/ 808:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("net");
 
 /***/ }),
@@ -2128,6 +2147,7 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("net");
 /***/ 37:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("os");
 
 /***/ }),
@@ -2135,6 +2155,7 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("os");
 /***/ 17:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("path");
 
 /***/ }),
@@ -2142,182 +2163,90 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("path");
 /***/ 404:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("tls");
-
-/***/ }),
-
-/***/ 310:
-/***/ ((module) => {
-
-module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("url");
 
 /***/ }),
 
 /***/ 837:
 /***/ ((module) => {
 
+"use strict";
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("util");
-
-/***/ }),
-
-/***/ 8:
-/***/ ((__webpack_module__, __unused_webpack___webpack_exports__, __nccwpck_require__) => {
-
-__nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__) => {
-/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(147);
-/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(17);
-/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(310);
-/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_3__ = __nccwpck_require__(763);
-/* harmony import */ var _actions_io__WEBPACK_IMPORTED_MODULE_4__ = __nccwpck_require__(914);
-
-
-    
-
-
-
-const fsPromises = fs__WEBPACK_IMPORTED_MODULE_0__.promises;
-const __dirname = path__WEBPACK_IMPORTED_MODULE_1__.dirname((0,url__WEBPACK_IMPORTED_MODULE_2__.fileURLToPath)("file:///D:/Aaron/Dev/gh-pages-copy-action/index.js"));
-
-const sourceJsonPath = path__WEBPACK_IMPORTED_MODULE_1__.join(__dirname, _actions_core__WEBPACK_IMPORTED_MODULE_3__.getInput("source-json"));
-const targetFolderPath = path__WEBPACK_IMPORTED_MODULE_1__.join(__dirname, _actions_core__WEBPACK_IMPORTED_MODULE_3__.getInput("target-folder"));
-
-try {
-    const json = await fsPromises.readFile(sourceJsonPath)
-    const dependencies = JSON.parse(json);
-
-    // Recursive must be true for directories
-    const options = { recursive: true, force: false }
-
-    for (const dep of dependencies) {
-        const [from, to] = dep;
-        const path = path.join(targetFolderPath, to);
-        await _actions_io__WEBPACK_IMPORTED_MODULE_4__.cp(from, targetFolderPath, options);
-    }
-} catch (err) {
-    _actions_core__WEBPACK_IMPORTED_MODULE_3__.setFailed(`Action failed with error ${err}`);
-}
-
-__webpack_handle_async_dependencies__();
-}, 1);
 
 /***/ })
 
-/******/ });
+/******/ 	});
 /************************************************************************/
-/******/ // The module cache
-/******/ var __webpack_module_cache__ = {};
-/******/ 
-/******/ // The require function
-/******/ function __nccwpck_require__(moduleId) {
-/******/ 	// Check if module is in cache
-/******/ 	var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 	if (cachedModule !== undefined) {
-/******/ 		return cachedModule.exports;
-/******/ 	}
-/******/ 	// Create a new module (and put it into the cache)
-/******/ 	var module = __webpack_module_cache__[moduleId] = {
-/******/ 		// no module.id needed
-/******/ 		// no module.loaded needed
-/******/ 		exports: {}
-/******/ 	};
-/******/ 
-/******/ 	// Execute the module function
-/******/ 	var threw = true;
-/******/ 	try {
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
-/******/ 		threw = false;
-/******/ 	} finally {
-/******/ 		if(threw) delete __webpack_module_cache__[moduleId];
-/******/ 	}
-/******/ 
-/******/ 	// Return the exports of the module
-/******/ 	return module.exports;
-/******/ }
-/******/ 
-/************************************************************************/
-/******/ /* webpack/runtime/async module */
-/******/ (() => {
-/******/ 	var webpackThen = typeof Symbol === "function" ? Symbol("webpack then") : "__webpack_then__";
-/******/ 	var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
-/******/ 	var completeQueue = (queue) => {
-/******/ 		if(queue) {
-/******/ 			queue.forEach((fn) => (fn.r--));
-/******/ 			queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __nccwpck_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
-/******/ 	}
-/******/ 	var completeFunction = (fn) => (!--fn.r && fn());
-/******/ 	var queueFunction = (queue, fn) => (queue ? queue.push(fn) : completeFunction(fn));
-/******/ 	var wrapDeps = (deps) => (deps.map((dep) => {
-/******/ 		if(dep !== null && typeof dep === "object") {
-/******/ 			if(dep[webpackThen]) return dep;
-/******/ 			if(dep.then) {
-/******/ 				var queue = [];
-/******/ 				dep.then((r) => {
-/******/ 					obj[webpackExports] = r;
-/******/ 					completeQueue(queue);
-/******/ 					queue = 0;
-/******/ 				});
-/******/ 				var obj = {};
-/******/ 											obj[webpackThen] = (fn, reject) => (queueFunction(queue, fn), dep['catch'](reject));
-/******/ 				return obj;
-/******/ 			}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete __webpack_module_cache__[moduleId];
 /******/ 		}
-/******/ 		var ret = {};
-/******/ 							ret[webpackThen] = (fn) => (completeFunction(fn));
-/******/ 							ret[webpackExports] = dep;
-/******/ 							return ret;
-/******/ 	}));
-/******/ 	__nccwpck_require__.a = (module, body, hasAwait) => {
-/******/ 		var queue = hasAwait && [];
-/******/ 		var exports = module.exports;
-/******/ 		var currentDeps;
-/******/ 		var outerResolve;
-/******/ 		var reject;
-/******/ 		var isEvaluating = true;
-/******/ 		var nested = false;
-/******/ 		var whenAll = (deps, onResolve, onReject) => {
-/******/ 			if (nested) return;
-/******/ 			nested = true;
-/******/ 			onResolve.r += deps.length;
-/******/ 			deps.map((dep, i) => (dep[webpackThen](onResolve, onReject)));
-/******/ 			nested = false;
-/******/ 		};
-/******/ 		var promise = new Promise((resolve, rej) => {
-/******/ 			reject = rej;
-/******/ 			outerResolve = () => (resolve(exports), completeQueue(queue), queue = 0);
-/******/ 		});
-/******/ 		promise[webpackExports] = exports;
-/******/ 		promise[webpackThen] = (fn, rejectFn) => {
-/******/ 			if (isEvaluating) { return completeFunction(fn); }
-/******/ 			if (currentDeps) whenAll(currentDeps, fn, rejectFn);
-/******/ 			queueFunction(queue, fn);
-/******/ 			promise['catch'](rejectFn);
-/******/ 		};
-/******/ 		module.exports = promise;
-/******/ 		body((deps) => {
-/******/ 			if(!deps) return outerResolve();
-/******/ 			currentDeps = wrapDeps(deps);
-/******/ 			var fn, result;
-/******/ 			var promise = new Promise((resolve, reject) => {
-/******/ 				fn = () => (resolve(result = currentDeps.map((d) => (d[webpackExports]))));
-/******/ 				fn.r = 0;
-/******/ 				whenAll(currentDeps, fn, reject);
-/******/ 			});
-/******/ 			return fn.r ? promise : result;
-/******/ 		}).then(outerResolve, reject);
-/******/ 		isEvaluating = false;
-/******/ 	};
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/compat */
-/******/ 
-/******/ if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = new URL('.', import.meta.url).pathname.slice(import.meta.url.match(/^file:\/\/\/\w:/) ? 1 : 0, -1) + "/";
-/******/ 
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
 /************************************************************************/
-/******/ 
-/******/ // startup
-/******/ // Load entry module and return exports
-/******/ // This entry module used 'module' so it can't be inlined
-/******/ var __webpack_exports__ = __nccwpck_require__(8);
-/******/ __webpack_exports__ = await __webpack_exports__;
-/******/ 
+/******/ 	/* webpack/runtime/compat */
+/******/ 	
+/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+const fs = __nccwpck_require__(147);
+const path = __nccwpck_require__(17);
+const core = __nccwpck_require__(186);
+const io = __nccwpck_require__(436);
+
+const fsPromises = fs.promises;
+
+(async () => {
+    const sourceJsonPath = path.join(__dirname, core.getInput("source-json"));
+    const targetFolderPath = path.join(__dirname, core.getInput("target-folder"));
+
+    try {
+        const json = await fsPromises.readFile(sourceJsonPath)
+        const dependencies = JSON.parse(json);
+
+        // Recursive must be true for directories
+        const options = { recursive: true, force: false }
+
+        for (const dep of dependencies) {
+            const [from, to] = dep;
+            const path = path.join(targetFolderPath, to);
+            await io.cp(from, targetFolderPath, options);
+        }
+    } catch (err) {
+        core.setFailed(`Action failed with error ${err}`);
+    }
+})()
+
+})();
+
+module.exports = __webpack_exports__;
+/******/ })()
+;
