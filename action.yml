@@ -1,0 +1,14 @@
+name: "GithubPages Copy Action"
+description: "Copies a list of folder to a target folder"
+inputs:
+  source-json:
+    description: "Path to the json containing the folder mappings"
+    required: false
+    default: "./gh-pages-dependencies.json"
+  target-folder:
+    description: "Path to gh-pages folder"
+    required: false
+    default: "./gh-pages"
+runs:
+  using: "node16"
+  main: "index.js"

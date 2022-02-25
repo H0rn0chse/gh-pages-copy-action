@@ -1,0 +1,25 @@
+{
+  "name": "gh-pages-copy-action",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H0rn0chse/gh-pages-copy-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/H0rn0chse/gh-pages-copy-action/issues"
+  },
+  "homepage": "https://github.com/H0rn0chse/gh-pages-copy-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/io": "^1.1.1"
+  }
+}
