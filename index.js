@@ -22,6 +22,8 @@ try {
         const fromPath = path.resolve(workRoot, from);
         const toPath = path.resolve(targetFolderPath, to);
 
+        core.info(`Root "${workRoot}"`);
+        core.info(`Root "${targetFolderPath}"`);
         core.info(`Copying "${fromPath}" to "${toPath}"`);
 
         await io.cp(fromPath, toPath, options);
