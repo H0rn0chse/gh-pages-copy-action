@@ -4,10 +4,11 @@ const core = require("@actions/core");
 const io = require("@actions/io");
 
 const fsPromises = fs.promises;
+const projectRoot = path.join(__dirname, "../../");
 
 (async () => {
-    const sourceJsonPath = path.join(__dirname, core.getInput("source-json"));
-    const targetFolderPath = path.join(__dirname, core.getInput("target-folder"));
+    const sourceJsonPath = path.join(projectRoot, core.getInput("source-json"));
+    const targetFolderPath = path.join(projectRoot, core.getInput("target-folder"));
 
     try {
         const json = await fsPromises.readFile(sourceJsonPath)
