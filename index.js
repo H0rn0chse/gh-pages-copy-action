@@ -4,9 +4,8 @@ import * as core from "@actions/core";
 import * as io from "@actions/io";
 
 const fsPromises = fs.promises;
-const workRoot = path.join(process.env.GITHUB_WORKSPACE);
 
-
+const workRoot = path.join(core.getInput("root"));
 const sourceJsonPath = path.join(workRoot, core.getInput("source-json"));
 const targetFolderPath = path.join(workRoot, core.getInput("target-folder"));
 
