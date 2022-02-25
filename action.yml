@@ -1,6 +1,10 @@
 name: "GithubPages Copy Action"
 description: "Copies a list of folder to a target folder"
 inputs:
+  root:
+    description: "Root of the project"
+    required: false
+    default: "./"
   source-json:
     description: "Path to the json containing the folder mappings"
     required: false

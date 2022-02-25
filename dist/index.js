@@ -2168,7 +2168,7 @@ __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 
 const fsPromises = fs__WEBPACK_IMPORTED_MODULE_0__.promises;
 
-const workRoot = path__WEBPACK_IMPORTED_MODULE_1__.join("./");
+const workRoot = path__WEBPACK_IMPORTED_MODULE_1__.join(_actions_core__WEBPACK_IMPORTED_MODULE_2__.getInput("root"));
 const sourceJsonPath = path__WEBPACK_IMPORTED_MODULE_1__.join(workRoot, _actions_core__WEBPACK_IMPORTED_MODULE_2__.getInput("source-json"));
 const targetFolderPath = path__WEBPACK_IMPORTED_MODULE_1__.join(workRoot, _actions_core__WEBPACK_IMPORTED_MODULE_2__.getInput("target-folder"));
 
